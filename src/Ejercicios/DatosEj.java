@@ -1,4 +1,4 @@
-package Ejercicio2;
+package Ejercicios;
 
 import java.util.Iterator;
 import java.util.NavigableSet;
@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 
 
-public class DatosEj2 {
+public class DatosEj {
 	public static TreeSet CrearConjunto(int numero) {
 		System.out.println("El numero de elementos sera de: "+numero);
 		TreeSet <Integer> cjto= new TreeSet();

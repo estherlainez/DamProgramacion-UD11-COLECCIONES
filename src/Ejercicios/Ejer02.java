@@ -1,4 +1,4 @@
-package Ejercicio2;
+package Ejercicios;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -26,12 +26,12 @@ public class Ejer02 {
 		
 		
 		TreeSet <Integer> cjto1= new TreeSet();
-		cjto1=DatosEj2.CrearConjunto ((int) (Math.random()*100));
+		cjto1=DatosEj.CrearConjunto ((int) (Math.random()*100));
 		System.out.println(cjto1);
 		
 		//creo el conjunto2
 		TreeSet <Integer> cjto2= new TreeSet();
-		cjto1=DatosEj2.CrearConjunto ((int) (Math.random()*100));
+		cjto1=DatosEj.CrearConjunto ((int) (Math.random()*100));
 		System.out.println(cjto2);
 		
 		
@@ -43,7 +43,7 @@ public class Ejer02 {
 		*/
 		TreeSet <Integer> insercion= new TreeSet();
 		System.out.println("Los elementos comunes seran:");
-		insercion=DatosEj2.ElementosComunes(cjto1, cjto2);
+		insercion=DatosEj.ElementosComunes(cjto1, cjto2);
 		System.out.println(insercion);
 	}
 

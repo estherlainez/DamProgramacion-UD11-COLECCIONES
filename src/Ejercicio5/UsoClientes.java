@@ -51,18 +51,18 @@ public class UsoClientes {
 			}
 
 		}else {//<<<<<<<<<seria una manera equivalente>>>>>>>>>>
-			Clientes a= new Clientes(1,"Paqui","666555444");
-			listaClientes.add (a);
-			//listaClientes.add(new Clientes(1,"Paqui","666555444"));	
-			Clientes s= new Clientes(2,"Pepa","666777987");
-			//listaClientes.add(new Clientes(2,"Pepa","666777987"));
-			listaClientes.add(s);
-			Clientes f= new Clientes(3,"Maria","654321234");
-			//listaClientes.add(new Clientes(3,"Maria","654321234"));
-			listaClientes.add(f);
-			Clientes g= new Clientes(4,"Pilar","609878009");
-			listaClientes.add(g);
-			//listaClientes.add(new Clientes(4,"Pilar","609878009"));
+			//Clientes a= new Clientes(1,"Paqui","666555444");
+			//listaClientes.add (a);
+			listaClientes.add(new Clientes(1,"Paqui","666555444"));	
+			//Clientes s= new Clientes(2,"Pepa","666777987");
+			listaClientes.add(new Clientes(2,"Pepa","666777987"));
+			//listaClientes.add(s);
+			//Clientes f= new Clientes(3,"Maria","654321234");
+			listaClientes.add(new Clientes(3,"Maria","654321234"));
+			//listaClientes.add(f);
+			//Clientes g= new Clientes(4,"Pilar","609878009");
+			//listaClientes.add(g);
+			listaClientes.add(new Clientes(4,"Pilar","609878009"));
 
 		}
 	
@@ -70,9 +70,7 @@ public class UsoClientes {
 		do {
 			System.out.println("MENU");
 			System.out.println("1.Añadir nuevo cliente");
-		
-			System.out.println("3.Ordenar Clientes por nombre");
-			System.out.println("4.Ordenar Clientes por ID");
+			System.out.println("2.Ordenar Clientes por ID");
 			System.out.println("5.Modificar datos");
 			System.out.println("6.Dar de baja un cliente");
 			System.out.println("7.Listar los clientes");
@@ -90,19 +88,13 @@ public class UsoClientes {
 		
 				break;
 			
-		
-			/*	
-			case 3:
-				System.out.println("3.Listar Clientes por nombre");
-				Datos.OrdenarPorNombre(listaClientes);
-				
+			case 2:
+				System.out.println("2.Ordenar Clientes por ID");
+				TreeSet <Clientes> OrdenId= new TreeSet();
+				OrdenId=Datos.OrdenarPorID(listaClientes);
+				System.out.println(OrdenId);
 				break;
-			case 4:
-				System.out.println("4.Ordenar Clientes por ID");
-				Datos.OrdenarPorID(listaClientes);
 				
-				break;
-				*/
 			case 5:
 				System.out.println("Modificar datos");
 				Datos.ModificarDatos(teclado, listaClientes);

@@ -1,4 +1,4 @@
-package Ejercicio2;
+package Ejercicios;
 import java.util.*;
 public class Ejer03 {
 
@@ -10,16 +10,16 @@ public class Ejer03 {
 		 */
 		
 		TreeSet <Integer> cjto1= new TreeSet();
-		cjto1=DatosEj2.CrearConjunto ((int) (Math.random()*100));
+		cjto1=DatosEj.CrearConjunto ((int) (Math.random()*100));
 		System.out.println(cjto1);
 		
 		
 		TreeSet <Integer> cjto2= new TreeSet();
-		cjto2=DatosEj2.CrearConjunto((int) (Math.random()*100));
+		cjto2=DatosEj.CrearConjunto((int) (Math.random()*100));
 		System.out.println(cjto2);
 		
 		TreeSet <Integer> conjuntoFinal= new TreeSet();
-		conjuntoFinal=DatosEj2.conjuntoFinal(cjto1, cjto2);
+		conjuntoFinal=DatosEj.conjuntoFinal(cjto1, cjto2);
 	
 		System.out.println("El resultado seria: "+conjuntoFinal);
 		

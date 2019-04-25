@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 import java.util.TreeSet;
+
 public class Datos {
 	Scanner teclado=new Scanner(System.in);
 	
@@ -78,18 +79,16 @@ public class Datos {
 		return objetoModificar;
 		
 	}
-	/*
-	public static int OrdenarPorID(TreeSet<Clientes>c) {
+	
+	public static TreeSet<Clientes> OrdenarPorID(TreeSet<Clientes>c) {
+		ComparaId ordenaId=new ComparaId();
+		TreeSet<Clientes> ordenId=new TreeSet();
+		ordenId.addAll(c);
+		return ordenId;
 		
-			public int compareTo(Object o1) {
-				Clientes Ob1 = (Clientes)o1;
-				if(this.getId<(Ob1.getId()))return 1
-				return getId().compareto(Ob1.getNombre());
-			}
 		
-		System.out.println(c.toString());
 	}
 	
-	*/
+	
 
 }
