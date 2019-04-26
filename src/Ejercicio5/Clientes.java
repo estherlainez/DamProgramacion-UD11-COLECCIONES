@@ -1,13 +1,12 @@
 package Ejercicio5;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
 
-public class Clientes implements java.io.Serializable, Comparator {
+public class Clientes implements Serializable,Comparable {
 
 	int numClientes;
-	int limite=10;
-	Clientes clientes[];
 	String nombre;
 	String telefono;
 	int id;
@@ -20,11 +19,11 @@ public class Clientes implements java.io.Serializable, Comparator {
 		identificador ++;
 	}
 	
-	public Clientes(int identificador,String n,String tel){
+	 Clientes (int identificador,String n,String tel){
 		this.nombre=n;
 		this.telefono=tel;
 		this.id=identificador;
-		identificador ++;
+	//	identificador ++;
 	}
 	
 	
@@ -71,13 +70,16 @@ public class Clientes implements java.io.Serializable, Comparator {
 		
 	}
 
+
+
 	@Override
-	public int compare(Object o1, Object o2) {
-			Clientes Ob1 = (Clientes)o1;
-			Clientes Ob2 = (Clientes)o2;
-			if(Ob1.nombre.compareTo(Ob2.nombre)<0)return -1;
-			if(Ob1.nombre.compareTo(Ob2.nombre)>0)return 1;
-			return 0;
+	public int compareTo(Object Ob1) {
+		System.out.println(((Clientes) Ob1).getId());
+		System.out.println(this.getId());
+
+		if (((Clientes) Ob1).getId()<this.getId()) return -1;
+		if (((Clientes) Ob1).getId()>this.getId()) return 1;
+		return 0;
 	}
 	
 	

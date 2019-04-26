@@ -50,19 +50,15 @@ public class UsoClientes {
 		
 			}
 
-		}else {//<<<<<<<<<seria una manera equivalente>>>>>>>>>>
-			//Clientes a= new Clientes(1,"Paqui","666555444");
-			//listaClientes.add (a);
-			listaClientes.add(new Clientes(1,"Paqui","666555444"));	
-			//Clientes s= new Clientes(2,"Pepa","666777987");
-			listaClientes.add(new Clientes(2,"Pepa","666777987"));
-			//listaClientes.add(s);
-			//Clientes f= new Clientes(3,"Maria","654321234");
-			listaClientes.add(new Clientes(3,"Maria","654321234"));
-			//listaClientes.add(f);
-			//Clientes g= new Clientes(4,"Pilar","609878009");
-			//listaClientes.add(g);
-			listaClientes.add(new Clientes(4,"Pilar","609878009"));
+		}else {
+			Clientes c=new Clientes(91,"Paqui","666555444");
+			listaClientes.add(c);	
+			
+			//listaClientes.add(new Clientes(2,"Pepa","666777987"));
+		
+			//listaClientes.add(new Clientes(3,"Maria","654321234"));
+		
+		//	listaClientes.add(new Clientes(4,"Pilar","609878009"));
 
 		}
 	
@@ -70,12 +66,11 @@ public class UsoClientes {
 		do {
 			System.out.println("MENU");
 			System.out.println("1.Añadir nuevo cliente");
-			System.out.println("2.Ordenar Clientes por ID");
-			System.out.println("5.Modificar datos");
-			System.out.println("6.Dar de baja un cliente");
-			System.out.println("7.Listar los clientes");
-			System.out.println("8.Borrado de clientes multiple");
-			System.out.println("9.Salir");
+			System.out.println("2.Modificar datos");
+			System.out.println("3.Dar de baja un cliente");
+			System.out.println("4.Listar los clientes");
+			System.out.println("5.Borrado de clientes multiple");
+			System.out.println("6.Salir");
 			System.out.println("Elija la opcion que desee realizar: ");
 	
 			opcion=teclado.nextInt();
@@ -88,20 +83,14 @@ public class UsoClientes {
 		
 				break;
 			
+			
 			case 2:
-				System.out.println("2.Ordenar Clientes por ID");
-				TreeSet <Clientes> OrdenId= new TreeSet();
-				OrdenId=Datos.OrdenarPorID(listaClientes);
-				System.out.println(OrdenId);
-				break;
-				
-			case 5:
 				System.out.println("Modificar datos");
 				Datos.ModificarDatos(teclado, listaClientes);
 				
 
 				break;
-			case 6:
+			case 3:
 				System.out.println("Dar de baja un cliente");
 				System.out.println("¿Que cliente va a quitar de la lista? \nIntroduzca nombre: ");
 				teclado.nextLine();
@@ -112,16 +101,16 @@ public class UsoClientes {
 				boolean borrar=Datos.BorrarCliente(objetoBorrar, listaClientes);
 				
 				break;
-			case 7:
+			case 4:
 				System.out.println("Listar los clientes");
 				Datos.mostrtarLista(listaClientes);
 				
 				break;
 				
-			case 8:
+			case 5:
 				System.out.println("8.Borrado de clientes multiple");
                   //paso 1: crear lista de los elelmentos que voy a borrar
-                  ArrayList <Clientes> listaBorrados =new ArrayList<>();
+                  TreeSet <Clientes> listaBorrados =new TreeSet();
 
                   String mas="si";
                   while (mas.equals("si")) {
@@ -155,7 +144,7 @@ public class UsoClientes {
                   break;
 
    
-			case 9:
+			case 6:
 				try {
 					
 					ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("c:\\archivos\\DatosClientes.dat"));

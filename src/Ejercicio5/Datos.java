@@ -80,15 +80,7 @@ public class Datos {
 		
 	}
 	
-	public static TreeSet<Clientes> OrdenarPorID(TreeSet<Clientes>c) {
-		ComparaId ordenaId=new ComparaId();
-		TreeSet<Clientes> ordenId=new TreeSet();
-		ordenId.addAll(c);
-		return ordenId;
-		
-		
-	}
-	
+
 	
 
 }
