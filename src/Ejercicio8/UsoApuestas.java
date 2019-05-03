@@ -49,13 +49,18 @@ public class UsoApuestas {
 		
 //estadisticas
 		//1) Calcular que equipo creen nuestros apostantes será el ganador. 
-		int ganadorLocal=0,ganadorVisitante=0,empate=0;
+		int ganadorLocal=0,ganadorVisitante=0,empate=0,golesLocal=0,golesVisitante=0;
 		for(String clave: m.keySet()) {
 			Resultado rpro=(m.get(clave)).getR();
+			golesLocal=golesLocal+rpro.getLocal();
+			golesVisitante= golesVisitante+rpro.getVisitante();
+			
 			if(rpro.getLocal()>rpro.getVisitante()) {
 				ganadorLocal ++;
 			} else if(rpro.getLocal()<rpro.getVisitante()) {
 				ganadorVisitante ++;
+			}else {
+				empate++;
 			}
 			
 		}
@@ -65,38 +70,34 @@ public class UsoApuestas {
 			System.out.println("Nuestros apostantes creen que ganara el equipo visitante");
 		} else if(ganadorLocal>ganadorVisitante) {
 			System.out.println("Nuestros apostantes creen que ganara el equipo local");
+		}else {
+			System.out.println("Nuestros apostantes creen que apostaran");
 		}
 		
-		//2) Calcular la media de goles apostados
+		//2) Media de goles en el partido
+
+		double mediagolesLocal, mediagolesVisitante;
 		
-		int golesLocales, golesVisitantes;
-		int sumaL=0,sumaV=0,mediaApostante=0,mediaL = 0,mediaV=0,totalMedia=0,totalGoles = 0;
+		mediagolesLocal=(golesLocal/m.size());
+		mediagolesVisitante=(golesVisitante)/m.size();
 		
-		for(String clave: m.keySet()) {
-			Resultado rpro=(m.get(clave)).getR();
-			golesLocales=rpro.getLocal();
-			golesVisitantes=rpro.getVisitante();
-			
-			sumaL= sumaL+ golesLocales;
-			sumaV= sumaV+ golesVisitantes;
-			
-			mediaApostante=m.size();
-			mediaL=sumaL/mediaApostante;
-			mediaV=sumaV/mediaApostante;
-			
-			totalGoles=sumaL+sumaV;
-			totalMedia=totalGoles/mediaApostante;
+		
+		System.out.println("La media de los goles locales de nuestras apuestas es de " + mediagolesLocal);
+		System.out.println("La meida de los goles visitantes de nuestras apuestas es de " + mediagolesVisitante+ "\n");
+		
+		//3) Cual es nuestro mejor apostante. Aquel que ha ganado mas dinero
+		double max=0; String clGanador="";
+		
+		
+		for (String clave: m.keySet()) {
+			Apuesta ap= ganadores.get(clave);
+			//System.out.println ("holacaracola"+ap.getDineroApostado());
+			if (ap.getDineroApostado()>max) {
+				max=ap.getDineroApostado();
+				clGanador=clave;
+			}
+			System.out.println("El mejor de los ganadores es el siguiente:\n"+clGanador+"\n"+ ganadores.get(clave));
+
 		}
-		
-		System.out.println("La suma de los goles locales de nuestras apuestas suma " + sumaL);
-		System.out.println("La suma de los goles visitantes de nuestras apuestas suma " + sumaV+ "\n");
-		
-		System.out.println("Nuestros apostantes apuestan una media de goles para el equipo Local de  " + mediaL);
-		System.out.println("Nuestros apostantes apuestan una media de goles para el equipo Visitante de  " + mediaV + "\n");
-		
-		System.out.println("Nuestros apostantes apuestan un total de Goles  " + totalGoles+ " entre los dos equipos");
-		System.out.println("Nuestros apostantes apuestan una media de Goles de  " + totalMedia + " para los dos equipos\n");
-		
-		
 	}
 }
